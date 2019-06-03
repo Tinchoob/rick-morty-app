@@ -1,5 +1,6 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+
 import AppNavigator from '../../navigation/navigator';
 
 export default class App extends Component {

@@ -1,7 +1,10 @@
 import { StyleSheet } from 'react-native';
-import colors from '../../containers/Root/styles';
 
-import { responsiveWidth, responsiveFontSize } from '../../utils/Dimensions';
+import {
+  responsiveWidth,
+  responsiveFontSize,
+  responsiveHeight
+} from '../../utils/Dimensions';
 
 const styles = StyleSheet.create({
   itemContainer: {
@@ -9,17 +12,28 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 20,
     borderWidth: 1,
-    borderRadius: 10
+    borderRadius: 10,
+    flexDirection: 'row'
+  },
+  itemImage: {
+    height: responsiveHeight(16),
+    width: responsiveWidth(28)
   },
   itemTitle: {
-    fontSize: responsiveFontSize(3),
+    fontSize: responsiveFontSize(2.8),
+    maxWidth: '80%',
     fontWeight: 'bold',
     alignSelf: 'center'
   },
+  textContainer: {
+    flexDirection: 'column',
+    marginStart: 10,
+    justifyContent: 'center'
+  },
   itemStatus: {
-    fontSize: responsiveFontSize(1.5),
-
-    alignSelf: 'center'
+    fontSize: responsiveFontSize(2),
+    alignSelf: 'center',
+    marginTop: 15
   }
 });
 
