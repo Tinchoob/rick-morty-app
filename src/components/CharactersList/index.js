@@ -1,15 +1,22 @@
+/* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import { View, FlatList } from 'react-native';
 
-import styles from './styles';
 import ItemRow from '../ItemRow';
 
-const CharactersList = ({ data }) => {
+import styles from './styles';
+
+const CharactersList = ({ data, onCharacterSelected }) => {
   return (
     <View style={styles.listContainer}>
       <FlatList
         data={data}
-        renderItem={({ item }) => <ItemRow itemData={item} />}
+        renderItem={({ item }) => (
+          <ItemRow
+            itemData={item}
+            onItemSelected={() => onCharacterSelected(item)}
+          />
+        )}
       />
     </View>
   );

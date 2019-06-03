@@ -1,4 +1,6 @@
 import React, { useReducer, createContext } from 'react';
+import PropTypes from 'prop-types';
+
 import { initialState, reducer } from './reducers';
 import { useActions } from './actions';
 
@@ -10,9 +12,6 @@ const StoreProvider = ({ children }) => {
   // Get actions from useActions and pass it to Context
   const actions = useActions(state, dispatch);
 
-  // Log new state
-  // useEffect(() => console.log({ newState: state }), [state]);
-
   // Render state, dispatch and special case actions
   return (
     <StoreContext.Provider value={{ state, dispatch, actions }}>
@@ -20,4 +19,9 @@ const StoreProvider = ({ children }) => {
     </StoreContext.Provider>
   );
 };
+
+StoreContext.propTypes = {
+  children: PropTypes.object.isRequired
+};
+
 export { StoreContext, StoreProvider };

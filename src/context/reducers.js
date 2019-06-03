@@ -7,14 +7,9 @@ const types = {
 };
 
 const reducer = (state = initialState, action) => {
-  if (!action) {
-    return state;
-  }
-
   switch (action.type) {
     case types.SET_INPUT_VALUE:
       return {
-        ...state,
         inputValue: action.payload
       };
 

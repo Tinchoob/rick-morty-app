@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { map } from 'rxjs/operators';
+
 import charactersService from '../../service/charactersService';
 import SearchBar from '../../components/SearchBar';
+import CharactersList from '../../components/CharactersList';
+import { CHARACTER_SCREEN } from '../../navigation/screens';
 
 import styles from './styles';
-
-import CharactersList from '../../components/CharactersList';
 
 export default class Home extends Component {
   constructor(props) {
@@ -30,6 +31,12 @@ export default class Home extends Component {
       );
   };
 
+  handleCharacterSelected = character => {
+    const { navigation } = this.props;
+
+    navigation.navigate(CHARACTER_SCREEN, { character });
+  };
+
   getCharactersData = () => {
     charactersService
       .getAllCharacters()
@@ -49,7 +56,10 @@ export default class Home extends Component {
     return (
       <View style={styles.container}>
         <SearchBar onSearchButtonPressed={this.handleSearchButtonPressed} />
-        <CharactersList data={data} />
+        <CharactersList
+          data={data}
+          onCharacterSelected={this.handleCharacterSelected}
+        />
       </View>
     );
   }

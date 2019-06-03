@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { types } from './reducers';
 
 export const useActions = (state, dispatch) => {
