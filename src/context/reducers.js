@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 const initialState = {
   inputValue: ''
 };
@@ -23,4 +22,5 @@ const reducer = (state = initialState, action) => {
       throw new Error('Unexpected action');
   }
 };
+
 export { initialState, types, reducer };
