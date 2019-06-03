@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import colors from '../../containers/Root/styles';
 
 import { responsiveWidth } from '../../utils/Dimensions';
 

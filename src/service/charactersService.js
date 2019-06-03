@@ -5,4 +5,8 @@ const getAllCharacters = () => {
   return from(APIClientService.getAllCharacters());
 };
 
-export default { getAllCharacters };
+const getCharactersByName = name => {
+  return from(APIClientService.getCharactersByName(name));
+};
+
+export default { getAllCharacters, getCharactersByName };
