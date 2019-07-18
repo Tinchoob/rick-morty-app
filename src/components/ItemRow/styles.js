@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     width: responsiveWidth(28)
   },
   itemTitle: {
-    fontSize: responsiveFontSize(2.8),
-    maxWidth: '80%',
+    fontSize: responsiveFontSize(2.6),
+    width: responsiveWidth(40),
     fontWeight: 'bold',
     alignSelf: 'center'
   },
